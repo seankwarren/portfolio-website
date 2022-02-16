@@ -37,8 +37,6 @@ const Layout = ({ children, location }) => {
 
     //handleExternalLinks();
   }, [isLoading]);
-
-  console.log(isLoading)
   return (
     <>
       {/* <Head /> */}
