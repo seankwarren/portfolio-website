@@ -5,44 +5,61 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { Loader, Nav, Social, Email} from "@components"
+import { GlobalStyle } from "@styles"
 
-import Header from "./header"
-import "./layout.css"
+const Layout = ({ children, location }) => {
+  const isHome = location.pathname === '/';
+  const [isLoading, setIsLoading] = useState(isHome);
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsLoading(false), 3400);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    if (isLoading) {
+      return;
     }
-  `)
 
+    if (location.hash) {
+      //const id = location.hash.substring(1); // location.hash without the '#'
+      setTimeout(() => {
+        const el = document.getElementById('about');
+        if (el) {
+          el.scrollIntoView();
+          el.focus();
+        }
+      }, 0);
+    }
+
+    //handleExternalLinks();
+  }, [isLoading]);
+
+  console.log(isLoading)
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+      {/* <Head /> */}
+
+      <div id="root">
+        <GlobalStyle />  
+        {isLoading && isHome ? (
+          <Loader finishLoading={() => setIsLoading(!isLoading)} />
+        ) : (
+          <>
+          <Nav></Nav>
+          <Social></Social>
+          <Email></Email>
+          <div>
+            <main>
+              {children}
+            </main>
+            <footer />
+          </div>
+          </>
+        )}
       </div>
     </>
   )
@@ -50,6 +67,7 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 export default Layout

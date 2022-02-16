@@ -1,14 +1,15 @@
 import * as React from "react"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+import { GlobalStyle } from "@styles"
 
-const NotFoundPage = () => (
+const IndexPage = () => (
+  <>
+  <GlobalStyle></GlobalStyle>
   <Layout>
-    <Seo title="404: Not found" />
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div>404 Page not found</div>
   </Layout>
+  </>
 )
 
-export default NotFoundPage
+export default IndexPage
