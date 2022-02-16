@@ -11,7 +11,7 @@ import { Loader, Nav, Social, Email} from "@components"
 import { GlobalStyle } from "@styles"
 
 const Layout = ({ children, location }) => {
-  const isHome = location.pathname === '/';
+  const isHome = location.path === '/';
   const [isLoading, setIsLoading] = useState(isHome);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const Layout = ({ children, location }) => {
     }
 
     //handleExternalLinks();
-  }, [isLoading]);
+  }, [isLoading, location.hash]);
   return (
     <>
       {/* <Head /> */}
