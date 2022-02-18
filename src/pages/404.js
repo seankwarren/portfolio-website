@@ -1,7 +1,7 @@
 import * as React from "react"
 import styled from 'styled-components';
 import { Layout } from '@components';
-import { GlobalStyle } from "@styles"
+// import { GlobalStyle } from "@styles"
 
 const StyledMainContainer = styled.main`
   display: flex;

@@ -12,41 +12,24 @@ import { GlobalStyle } from "@styles"
 
 const Layout = ({ children, location }) => {
   const isHome = location.path === '/';
-  const [isLoading, setIsLoading] = useState(isHome);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timeout = setTimeout(() => setIsLoading(false), 3400);
     return () => clearTimeout(timeout);
   }, []);
 
-  useEffect(() => {
-    if (isLoading) {
-      return;
-    }
-
-    if (location.hash) {
-      //const id = location.hash.substring(1); // location.hash without the '#'
-      setTimeout(() => {
-        const el = document.getElementById('about');
-        if (el) {
-          el.scrollIntoView();
-          el.focus();
-        }
-      }, 0);
-    }
-
-    //handleExternalLinks();
-  }, [isLoading, location.hash]);
   return (
     <>
       {/* <Head /> */}
 
       <div id="root">
         <GlobalStyle />  
-        {isLoading && isHome ? (
+        {isLoading ? (
           <Loader finishLoading={() => setIsLoading(!isLoading)} />
         ) : (
           <>
+          <GlobalStyle /> 
           <Nav></Nav>
           <Social></Social>
           <Email></Email>

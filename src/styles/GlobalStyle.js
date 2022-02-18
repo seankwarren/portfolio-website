@@ -4,6 +4,7 @@ import TransitionStyles from './TransitionStyles';
 
 const GlobalStyle = createGlobalStyle`
   ${variables};
+  ${TransitionStyles};
   body {
     margin: 0;
     width: 100%;
@@ -43,7 +44,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: clamp(40px, 8vw, 50px);
   }
-  ${TransitionStyles};
 `;
 
 export default GlobalStyle;

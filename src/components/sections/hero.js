@@ -1,5 +1,5 @@
-import React/* , { useState, useEffect }  */ from 'react';
-// import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import React, { useEffect, useState }/* , { useState, useEffect }  */ from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 
 const StyledHeroSection = styled.section`
@@ -42,6 +42,9 @@ const StyledHeroSection = styled.section`
 `;
 
 const Hero = () => {
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => setIsMounted(true),[]);
+
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Sean Warren.</h2>;
   const three = <h3 className="big-heading">I build things from code and wood.</h3>;
@@ -59,9 +62,14 @@ const Hero = () => {
   return (
     <StyledHeroSection>
         <>
-          {items.map((item, i) => (
-            <div key={i}>{item}</div>
-          ))}
+        <TransitionGroup>
+          {isMounted && (
+            items.map((item, i) => (
+              <CSSTransition classNames="fade" key={i} timeout={1000}>
+                <div key={i} style={{transitionDelay: "200ms"}}>{item}</div>
+              </CSSTransition>
+          )))}
+        </TransitionGroup>
         </>
     </StyledHeroSection>
   );

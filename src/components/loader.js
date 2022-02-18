@@ -39,7 +39,7 @@ const Loader = ({ finishLoading }) => {
   const [isMounted, setIsMounted] = useState();
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 10);
+    const timeout = setTimeout(() => setIsMounted(true));
     return () => clearTimeout(timeout);
   }, []);
 
