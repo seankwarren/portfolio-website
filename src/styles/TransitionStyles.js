@@ -7,17 +7,16 @@ const TransitionStyles = css`
   .fadeup-enter {
     opacity: 0.01;
     transform: translateY(-40px);
-    transition: all 1000ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
   }
   .fadeup-enter-active {
     opacity: 1;
     transform: translateY(0px);
-    transition: opacity 1000ms var(--easing), transform 300ms var(--easing);
+    transition: opacity 300ms var(--easing), transform 300ms var(--easing);
   }
   .fadeup-enter-done {
     opacity: 1;
     transform: translateY(0px);
-    transition: opacity 1000ms var(--easing), transform 300ms var(--easing);
   }
 
   /* Fade down */
@@ -29,12 +28,10 @@ const TransitionStyles = css`
   .fadedown-enter-active {
     opacity: 1;
     transform: translateY(0px);
-    transition: opacity 300ms var(--easing), transform 300ms var(--easing);
   }
   .fadedown-enter-done {
     opacity: 1;
     transform: translateY(0px);
-    transition: opacity 300ms var(--easing), transform 300ms var(--easing);
   }
 
   /* Fade */
