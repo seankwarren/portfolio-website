@@ -11,7 +11,10 @@ import { Loader, Nav, Social, Email} from "@components"
 import { GlobalStyle } from "@styles"
 
 const Layout = ({ children, location }) => {
-  const isHome = location.path === '/';
+  if (location && location !== "undefined"){
+    const isHome = location.path === '/';
+  }
+  
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
