@@ -10,11 +10,15 @@ import Icon from '@components/icons/icon.svg';
 import { useScrollDirection } from '@hooks';
 
 const StyledLogo = styled.svg`
+box-sizing: border-box;
+
 path {
   stroke: var(--accent-main);
   stroke-width: 3px;
   fill: transparent;
+  
 }
+
 svg:hover path {
   stroke: var(--accent-flair);
   stroke-width: 3.5px;
@@ -29,10 +33,12 @@ const StyledHeader = styled.header`
     top: 0;
     left: 0;
     z-index: 11;
-    padding: 0px 50px;
+    padding: 0px 40px;
     width: 100%;
     height: var(--nav-scroll-height);
-    background-color: var(--dark)
+    background-clip: border-box;
+    background: var(--dark);
+    opacity: 90%;
     filter: none !important;
     pointer-events: auto !important;
     user-select: auto !important;
@@ -44,26 +50,23 @@ const StyledHeader = styled.header`
     @media (max-width: 1080px) {
         padding: 0 40px;
     }
+
     @media (max-width: 768px) 
         padding: 0 25px;
     }
-    @media (prefers-reduced-motion: no-preference) {
+
+    @media {
       ${props =>
       props.scrollDirection === 'up' &&
         !props.scrolledToTop &&
         css`
-          height: var(--nav-scroll-height);
           transform: translateY(0px);
-          background-color: var(--dark));
-          box-shadow: 0 0 10px var(--dark-shadow);
       `};
       ${props =>
       props.scrollDirection === 'down' &&
         !props.scrolledToTop &&
         css`
-          height: var(--nav-scroll-height);
           transform: translateY(calc(var(--nav-scroll-height) * -1));
-          box-shadow: 0 0 10px var(--dark-shadow);
       `};
     }
 `;
@@ -75,8 +78,7 @@ const StyledNav = styled.nav`
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: var(--dark);
-    opacity: 90%;
+    background-color: transparent;
     font-family: var(--font-mono);
     counter-reset: item 0;
     z-index: 12;

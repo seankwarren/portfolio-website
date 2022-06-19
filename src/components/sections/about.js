@@ -11,30 +11,12 @@ const StyledAboutSection = styled.section`
     padding-top: 0;
     padding-left: 20px;
     padding-right: 20px;
-    h1 {
-        margin: 0 0 10px 4px;
-        color: var(--green);
-        font-family: var(--font-mono);
-        font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
-        font-weight: 400;
-        @media (max-width: 640px) {
-        margin: 0 0 20px 2px;
-        }
-    }
-    h2 {
+    a {
         align-item: center;
         position: relative;
         font-weight: 600;
         font-size: clamp(26px, 5vw, var(--fz-heading));
         color: var(--light-orange);
-    }
-    h3 {
-        margin-top: 10px;
-        font-weight: 500;
-        font-size: clamp(var(--fz-xxl), 5vw, var(--fz-heading));
-        color: var(--lightest-red);
-        line-height: 0.9;
-        text-decoration: dashed underline 2px;
     }
     p {
         margin: 20px 0 0;
@@ -44,7 +26,7 @@ const StyledAboutSection = styled.section`
 `
 
 const About = () => {
-    const head = <h2 className="numbered-heading">About Me</h2>;
+    const head = <a id="about" className="numbered-heading">About Me</a>;
     const body = (
       <>
         <p>
