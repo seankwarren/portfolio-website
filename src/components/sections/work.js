@@ -10,6 +10,9 @@ const StyledWorkSection = styled.section`
 
     .inner {
         display: flex;
+        @media(max-width: 640px) {
+            flex-direction: column;
+        }
     }
 
     h3 {
@@ -31,6 +34,7 @@ const StyledWorkSection = styled.section`
         padding: 0;
         margin: 0 0 5px 20px;
     }
+
     .company {
         color: var(--light-orange)
     }
@@ -56,7 +60,7 @@ const StyledWorkSection = styled.section`
         position: relative;
         z-index: 3;
         width: max-content;
-        padding: 0px;
+        padding: 0 0 10px 0;
         margin: 0px;
         list-style: none;
     }

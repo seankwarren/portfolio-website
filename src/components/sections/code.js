@@ -34,6 +34,8 @@ const StyledCodeSection = styled.section`
     }
 
     h4 {
+        display: flex;
+        flex-wrap: wrap;
         color: var(--lightest-orange);
         font-weight: 300;
         font-size: var(--fz-xs);
@@ -45,6 +47,7 @@ const StyledCodeSection = styled.section`
     }
 
     ul {
+        padding: 0;
         display: inline-block;
         text-align: left;
         font-family: var(--monospace);
