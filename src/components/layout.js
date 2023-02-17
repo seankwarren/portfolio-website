@@ -11,11 +11,10 @@ import { Loader, Nav, Social, Email} from "@components"
 import { GlobalStyle } from "@styles"
 
 const Layout = ({ children, location }) => {
-  const isHome = location.pathname === '/';
-  const [isLoading, setIsLoading] = useState(isHome);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsLoading(false), 3400);
+    const timeout = setTimeout(() => setIsLoading(false), 3100);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -45,7 +44,7 @@ const Layout = ({ children, location }) => {
 
       <div id="root">
         <GlobalStyle />  
-        {isLoading && isHome ? (
+        {isLoading ? (
           <Loader finishLoading={() => setIsLoading(!isLoading)} />
         ) : (
           <>
@@ -67,7 +66,6 @@ const Layout = ({ children, location }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  location: PropTypes.object.isRequired,
 }
 
 export default Layout

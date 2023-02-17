@@ -6,9 +6,10 @@ import { Layout, Hero, About, Work, Code } from "./../components"
 const StyledMainContainer = styled.main`
   counter-reset: section;
 `;
-const IndexPage = ({ location }) => (
+
+const IndexPage = () => (
   <>
-  <Layout location={location}>
+  <Layout>
     <Hero />
     <About />
     <Work />
@@ -17,9 +18,5 @@ const IndexPage = ({ location }) => (
   </Layout>
   </>
 )
-
-IndexPage.propTypes = {
-  location: PropTypes.object.isRequired,
-};
 
 export default IndexPage
