@@ -63,6 +63,9 @@ const StyledWorkSection = styled.section`
         padding: 0 0 10px 0;
         margin: 0px;
         list-style: none;
+        @media(max-width: 640px) {
+            padding: 0 0 10px 20px;
+        }
     }
     button {
         cursor: pointer;
