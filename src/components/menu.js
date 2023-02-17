@@ -7,14 +7,14 @@ import { useOnClickOutside } from '@hooks';
 
 const StyledMenu = styled.div`
   display: none;
-  @media (max-width: 507px) {
+  @media (max-width: 770px) {
     display: block;
   }
 `;
 
 const StyledHamburgerButton = styled.button`
   display: none;
-  @media (max-width: 507px) {
+  @media (max-width: 770px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,7 +84,7 @@ const StyledHamburgerButton = styled.button`
 
 const StyledSidebar = styled.aside`
   display: none;
-  @media (max-width: 507px) {
+  @media (max-width: 770px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,11 +93,11 @@ const StyledSidebar = styled.aside`
     bottom: 0;
     right: 0;
     padding: 50px 10px;
-    width: min(75vw, 400px);
+    width: min(75vw, 300px);
     height: 100vh;
     outline: 0;
-    background-color: var(--light-navy);
-    box-shadow: -10px 0px 30px -15px var(--navy-shadow);
+    background-color: var(--forest-green);
+    box-shadow: -10px 0px 30px -15px var(--dark-forest-green);
     z-index: 9;
     transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
     visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
@@ -119,37 +119,41 @@ const StyledSidebar = styled.aside`
     list-style: none;
     width: 100%;
     li {
-      position: relative;
-      margin: 0 auto 20px;
-      counter-increment: item 1;
-      font-size: clamp(var(--fz-sm), 4vw, var(--fz-lg));
-      @media (max-width: 507px) {
-        margin: 0 auto 10px;
-      }
-      &:before {
-        content: '0' counter(item) '.';
-        display: block;
-        margin-bottom: 5px;
-        color: var(--green);
-        font-size: var(--fz-sm);
-      }
+        display: flex;
+        text-align: right;
+        position: relative;
+        margin: 0 auto 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+        counter-increment: item 1;
+        font-size: var(--fz-xl);
+        @media (max-width: 507px) {
+            margin: 0 auto 10px;
+        }
+        &:before {
+            content: '0' counter(item) '.';
+            /* display: block; */
+            margin-bottom: 5px;
+            color: var(--green);
+            font-size: var(--fz-lg);
+        }
     }
     a {
-      display: inline-block;
-      text-decoration: none;
-      text-decoration-skip-ink: auto;
-      color: inherit;
-      position: relative;
-      transition: var(--transition);
-      &:hover,
-      &:active,
-      &:focus {
-        color: var(--green);
-        outline: 0;
-      }
-      width: 100%;
-      padding: 3px 20px 20px;
-    }
+        display: inline-block;
+        text-decoration: none;
+        text-decoration-skip-ink: auto;
+        color: var(--lightest-orange);
+        position: relative;
+        transition: var(--transition);
+        &:hover,
+        &:active,
+        &:focus {
+            color: var(--green);
+            outline: 0;
+        }
+        width: 100%;
+        padding: 0px 20px 20px;
+        }
   }
   .resume-link {
     color: var(--green);
@@ -157,7 +161,7 @@ const StyledSidebar = styled.aside`
     border: 1px solid var(--green);
     border-radius: var(--border-radius);
     padding: 1.25rem 1.75rem;
-    font-size: var(--fz-sm);
+    font-size: var(--fz-md);
     font-family: var(--font-mono);
     line-height: 1;
     text-decoration: none;

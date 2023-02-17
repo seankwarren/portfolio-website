@@ -19,7 +19,8 @@ const StyledHeader = styled.header`
     padding: 0px 50px;
     width: 100%;
     height: var(--nav-height);
-    background-color: var(--forest-green)
+    background-color: var(--forest-green);
+    opacity: 90%;
     transition: var(--transition);
     box-sizing: border-box;
     box-shadow: 0 0 10px var(--dark-forest-green);
@@ -27,7 +28,7 @@ const StyledHeader = styled.header`
     @media (max-width: 1080px) {
         padding: 0 40px;
     }
-    @media (max-width: 768px) 
+    @media (max-width: 770px) 
         padding: 0 25px;
     }
 `;
@@ -69,7 +70,7 @@ const StyledNav = styled.nav`
 const StyledLinks = styled.div`
   display: flex;
   align-items: center;
-  @media (max-width: 507px) {
+  @media (max-width: 770px) {
     display: none;
   }
   ol {

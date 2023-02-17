@@ -5,9 +5,11 @@ const variables = css`
     --dark-forest-green: #121410;
     --forest-green: #20241c;
     --green: #8c8c23;
+    --trans-green: rgba(140,140,35,.1);
     --lightest-red: #c99897;
     --light-orange: #edb372;
     --lightest-orange: #ebcfb0;
+    --transparent: transparent;
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;

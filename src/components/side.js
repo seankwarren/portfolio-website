@@ -16,7 +16,7 @@ const StyledSideElement = styled.div`
     left: ${props => (props.orientation === 'left' ? '20px' : 'auto')};
     right: ${props => (props.orientation === 'left' ? 'auto' : '20px')};
   }
-  @media (max-width: 507px) {
+  @media (max-width: 770px) {
     display: none;
   }
 `;

@@ -27,15 +27,15 @@ module.exports = {
     socialMedia: [
         {
             name: 'Linkedin',
-            url: 'https://linkedin.com'
+            url: 'https://linkedin.com/in/sean-k-warren'
         },
         {
             name: 'Github',
-            url: 'https://github.com'
+            url: 'https://github.com/seankwarren'
         },
         {
             name: 'Medium',
-            url: 'https://medium.com'
+            url: 'https://medium.com/@seankwarren722'
         }
     ],
 

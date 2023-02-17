@@ -10,7 +10,10 @@ const StyledHeroSection = styled.section`
     align-items: flex-start;
     min-height: 100vh;
     padding-top: 0;
-    @media (max-width: 640px) and (min-height: 700px) {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (max-width: 640px) and (min-height: 200vh) {
         padding-bottom: 10vh;
     }
     h1 {
@@ -25,7 +28,7 @@ const StyledHeroSection = styled.section`
     }
     h2 {
         font-weight: 600;
-        color: var(--light-orange);
+        color: var(--lightest-orange);
     }
     h3 {
         margin-top: 10px;
@@ -42,19 +45,20 @@ const StyledHeroSection = styled.section`
 `;
 
 const Hero = () => {
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Sean Warren.</h2>;
-  const three = <h3 className="big-heading">I build things from code and wood.</h3>;
-  const four = (
+  const h1 = <h1>Hi, my name is</h1>;
+  const h2 = <h2 className="big-heading">Sean Warren.</h2>;
+  const h3 = <h3 className="big-heading">I build things from code and wood.</h3>;
+  const h4 = (
     <>
       <p>
-        I’m a software engineer specializing in building scientific computing and data visualization tools
-        and experiences. Currently, I’m focused on building accessible, user-centered products.
+        I’m a chemical and software engineer specializing in scientific computing, building tools for data interaction and automation. 
+        Recently, I’m focused on exploring modeling, simulation, data visualization and machine learning in full-stack web applications.
+        I am currently open to new opportunities.
       </p>
     </>
   );
 
-  const items = [one, two, three, four];
+  const items = [h1, h2, h3, h4];
 
   return (
     <StyledHeroSection>
