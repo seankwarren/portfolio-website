@@ -24,16 +24,16 @@ const Layout = ({ children, location }) => {
       return;
     }
 
-    if (location.hash) {
-      //const id = location.hash.substring(1); // location.hash without the '#'
-      setTimeout(() => {
-        const el = document.getElementById('about');
-        if (el) {
-          el.scrollIntoView();
-          el.focus();
-        }
-      }, 0);
-    }
+    // if (location.hash) {
+    //   //const id = location.hash.substring(1); // location.hash without the '#'
+    //   setTimeout(() => {
+    //     const el = document.getElementById('about');
+    //     if (el) {
+    //       el.scrollIntoView();
+    //       el.focus();
+    //     }
+    //   }, 0);
+    // }
 
     //handleExternalLinks();
   }, [isLoading]);

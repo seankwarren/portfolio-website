@@ -3,24 +3,27 @@ import { useEffect } from 'react';
 // https://usehooks.com/useOnClickOutside/
 
 const useOnClickOutside = (ref, handler) => {
-  useEffect(
-    () => {
-      const listener = event => {
-        // Do nothing if clicking ref's element or descendent elements
-        if (!ref.current || ref.current.contains(event.target)) {
-          return;
+    useEffect(
+        () => {
+        const listener = event => {
+            // Do nothing if clicking ref's element or descendent elements
+            if (!ref.current || ref.current.contains(event.target)) {
+            return;
+            }
+
+            handler(event);
+        };
+
+        if (typeof window !== 'undefined'){
+            document.addEventListener('mousedown', listener);
+            document.addEventListener('touchstart', listener);
         }
-
-        handler(event);
-      };
-
-      document.addEventListener('mousedown', listener);
-      document.addEventListener('touchstart', listener);
-
-      return () => {
-        document.removeEventListener('mousedown', listener);
-        document.removeEventListener('touchstart', listener);
-      };
+        return () => {
+            if (typeof window !== 'undefined'){
+                document.removeEventListener('mousedown', listener);
+                document.removeEventListener('touchstart', listener);
+            }
+        };
     },
     // Add ref and handler to effect dependencies
     // It's worth noting that because passed in handler is a new ...
