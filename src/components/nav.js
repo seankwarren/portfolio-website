@@ -7,6 +7,7 @@ import { navLinks } from '@config';
 import { loaderDelay } from '@utils';
 import Menu from './menu';
 import Icon from '@components/icons/icon.svg';
+import ResumePDF from '/src/resume.pdf'
 
 const StyledHeader = styled.header`
     display: flex;
@@ -129,7 +130,7 @@ const Nav = ({ isHome }) => {
   );
 
   const ResumeLink = (
-    <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+    <a className="resume-button" download href={ResumePDF} target="_blank" rel="noopener noreferrer">
       Resume
     </a>
   );

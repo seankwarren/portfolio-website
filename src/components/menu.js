@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { navLinks } from '@config';
 import { useOnClickOutside } from '@hooks';
+import ResumePDF from "/src/resume.pdf";
 
 const StyledMenu = styled.div`
   display: none;
@@ -238,7 +239,7 @@ const Menu = () => {
               </ol>
             )}
 
-            <a href="/resume.pdf" className="resume-link">
+            <a href={ResumePDF} download target="_blank" className="resume-link">
               Resume
             </a>
           </nav>
