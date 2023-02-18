@@ -7,30 +7,31 @@ import GithubLinkIcon from '@components/icons/github-link-icon.svg';
 const StyledCodeSection = styled.section`
     display: flex;
     flex-direction: column;
-    /* align-items: flex-start; */
-    min-height: 100vh;
-    margin: calc(var(--nav-height) + 30px) 120px 0;
-    max-width: 100%;
-
-    @media(max-width: 770px){
-        margin: calc(var(--nav-height) + 30px) 20px 0;
-    }
+    align-items: flex-start;
+    min-height: 120vh;
+    padding-top: calc(var(--nav-height) + 30px); 
+    max-width: 75%;
     
     h2 {
+        align-self: start;
         margin-top: 10px;
         font-weight: 500;
         font-size: clamp(var(--fz-xxl), 5vw, var(--fz-heading));
         color: var(--lightest-red);
         line-height: 0.9;
+        padding-left: 10px;
         ::before {
             content: '03.  ';
-            font-family: var(--font-mono);
+            font-family var(--font-mono);
             font-size: var(--fz-lg);
         }
     }
 
     .highlight {
         color: var(--green);
+    }
+
+    header>span {
         font-size: var(--fz-sm);
     }
 
@@ -44,7 +45,7 @@ const StyledCodeSection = styled.section`
         color: var(--green);
         font-weight: 300;
         font-size: var(--fz-xs);
-        line-height: 1.3em;
+        line-height: 1.5em;
     }
 
     p {
@@ -69,7 +70,7 @@ const StyledCodeSection = styled.section`
             display: flex;
             flex-direction: column;
             background-color: var(--dark-forest-green);
-            margin: 30px 10px 30px;
+            margin: 15px;
             font-family: var(--font-mono);
             padding: 25px;
             justify-content:space-between;
@@ -153,13 +154,14 @@ const Code = ({ children, isHome }) => {
                                 <span className="highlight">Featured Project</span>
                                 <h3>{project.title}</h3>
                                 <p>{project.description}</p>
+                            </header>
+                            <footer>
                                 <h4>{project.techs.map((tech) => {
                                     return (
                                         <span>{tech}&nbsp;&nbsp;</span>
                                     )
                                 })}</h4>
-                            </header>
-                            <footer>
+                            
                                 {project.external_link && 
                                 <a href={project.external_link} target='_blank'>
                                     <ExternalLinkIcon />

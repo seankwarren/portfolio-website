@@ -51,7 +51,7 @@ const Hero = () => {
   const h4 = (
     <>
       <p>
-        I’m a chemical and software engineer specializing in scientific computing, building tools for data interaction and automation. 
+        I’m a chemical and software engineer specializing in scientific computing: building tools for data interaction and automation. 
         Recently, I’m focused on exploring modeling, simulation, data visualization and machine learning in full-stack web applications.
         I am currently open to new opportunities.
       </p>
