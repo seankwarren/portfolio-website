@@ -84,7 +84,7 @@ const StyledLinks = styled.div`
       margin: 0 5px;
       position: relative;
       counter-increment: item 1;
-      font-size: var(--fz-xs);
+      font-size: var(--fz-sm);
       a {
         padding: 10px;
         text-decoration: none;
@@ -93,7 +93,7 @@ const StyledLinks = styled.div`
           content: '0' counter(item) '.';
           margin-right: 5px;
           color: var(--green);
-          font-size: var(--fz-xxs);
+          font-size: var(--fz-xs);
           text-align: right;
         }
       }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import headshot from '/src/images/headshot.png'
 
 const StyledAboutSection = styled.section`
     display: flex;
@@ -61,6 +62,27 @@ const StyledAboutSection = styled.section`
             }
         }
     }
+    .headshot-container {
+        margin-top: 20px;
+        align-self: center;
+        background-color: var(--green);
+        border-radius: 10px;
+    }
+    img {
+        transform: translate(-5px, -5px);
+        border-radius: 10px;
+        vertical-align: top;
+        z-index: 1;
+        width: 200px;
+        height: 250px;
+        height: auto;
+        mix-blend-mode: hard-light;
+        /* transform: scaleX(-1); */
+        :hover {
+            mix-blend-mode: normal;
+        }
+    }
+    .img-filter {}
 `
 
 const About = () => {
@@ -117,6 +139,10 @@ const About = () => {
         {items.map((item, i) => (
             <div key={i}>{item}</div>
         ))}
+        <div className='headshot-container'>
+            <div></div>
+            <img alt="Headshot" src={headshot}/>
+        </div>
       </StyledAboutSection>
     );
   };
