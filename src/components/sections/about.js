@@ -8,7 +8,7 @@ const StyledAboutSection = styled.section`
     /* align-items: center; */
     flex-direction: column;
     align-items: flex-start;
-    min-height: 100vh;
+    min-height: 140vh;
     padding: calc(var(--nav-height) + 30px) 20px 0;
 
     h1 {
