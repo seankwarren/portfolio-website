@@ -5,6 +5,7 @@ import { Layout, Hero, About, Work, Code, Wood } from "./../components"
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
+  background-color: var(--dark-forest-green);
 `;
 
 const IndexPage = () => (
