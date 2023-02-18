@@ -132,6 +132,13 @@ const Code = ({ children, isHome }) => {
             techs: ["Jupyter", "Python", "big-data", "GIS-data", "TimeSeries", "GraphQL", "Clustering"],
             github_link: "https://github.com/seankwarren/Water-Quality-Analysis",
         },
+        {
+            title: "Metaballs",
+            description: "A marching squares root finding algorithm for an artistic rendering of metaballs",
+            techs: ["Javascript", "HTML", "CSS"],
+            github_link: "https://github.com/seankwarren/react-metaballs",
+            external_link: "https://seankwarren.github.io/metaballs/"
+        },
 
     ]
 
