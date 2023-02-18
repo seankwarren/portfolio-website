@@ -130,7 +130,7 @@ const Code = ({ children, isHome }) => {
         {
             title: "Water Quality Analysis",
             description: "An examination of water quality in the Atlanta watershed with a focus on identifying neglected areas and potential strategies for improving water quality monitoring ",
-            techs: ["Jupyter", "Python", "big-data", "GIS-data", "TimeSeries", "GraphQL", "Clustering"],
+            techs: ["Jupyter", "Python", "Scipy", "Pandas", "Numpy", "TimeSeries", "GIS-data"],
             github_link: "https://github.com/seankwarren/Water-Quality-Analysis",
         },
         {
