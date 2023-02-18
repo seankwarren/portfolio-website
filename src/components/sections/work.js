@@ -10,7 +10,7 @@ const StyledWorkSection = styled.section`
 
     .inner {
         display: flex;
-        @media(max-width: 640px) {
+        @media(max-width: 770px) {
             flex-direction: column;
         }
     }
@@ -63,7 +63,7 @@ const StyledWorkSection = styled.section`
         padding: 0 0 10px 0;
         margin: 0px;
         list-style: none;
-        @media(max-width: 640px) {
+        @media(max-width: 770px) {
             padding: 0 0 10px 20px;
         }
     }
