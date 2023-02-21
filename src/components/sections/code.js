@@ -66,6 +66,7 @@ const StyledCodeSection = styled.section`
         position: relative;
         
         li {
+            transition: var(--transition);
             border-radius: 7px;
             display: flex;
             flex-direction: column;
@@ -75,7 +76,9 @@ const StyledCodeSection = styled.section`
             padding: 25px;
             justify-content:space-between;
             :hover {
-                background-color: var(--trans-green);
+                /* margin: 5px; */
+                transform: translateY(-5px);
+                /* background-color: var(--trans-green); */
             }
             a {
                 align-content: bottom;

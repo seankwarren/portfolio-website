@@ -14,10 +14,10 @@ module.exports = {
             name: 'Code',
             url: '/#code'
         },
-        {
-            name: 'Wood',
-            url: '/#wood'
-        },
+        // {
+        //     name: 'Wood',
+        //     url: '/#wood'
+        // },
         {
             name: 'Contact',
             url: '/#contact'
@@ -33,10 +33,10 @@ module.exports = {
             name: 'Github',
             url: 'https://github.com/seankwarren'
         },
-        {
-            name: 'Medium',
-            url: 'https://medium.com/@seankwarren722'
-        }
+        // {
+        //     name: 'Medium',
+        //     url: 'https://medium.com/@seankwarren722'
+        // }
     ],
 
     srConfig: (delay = 200, viewFactor = 0.25) => ({

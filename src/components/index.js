@@ -12,4 +12,4 @@ export { default as About } from './sections/about';
 export { default as Work } from './sections/work';
 export { default as Wood } from './sections/wood';
 export { default as Code } from './sections/code';
-// export { default as Contact } from './sections/contact';
+export { default as Contact } from './sections/contact';

@@ -11,16 +11,6 @@ const StyledAboutSection = styled.section`
     min-height: 140vh;
     padding: calc(var(--nav-height) + 30px) 20px 0;
 
-    h1 {
-        margin: 0 0 10px 4px;
-        color: var(--green);
-        font-family: var(--font-mono);
-        font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
-        font-weight: 400;
-        @media (max-width: 640px) {
-        margin: 0 0 20px 2px;
-        }
-    }
     h3 {
         margin-top: 10px;
         font-weight: 500;
@@ -82,7 +72,6 @@ const StyledAboutSection = styled.section`
             mix-blend-mode: normal;
         }
     }
-    .img-filter {}
 `
 
 const About = () => {

@@ -21,23 +21,24 @@ const StyledSocialList = styled.ul`
     background-color: var(--lightest-orange);
   }
   li {
+    transition: var(--transition);
+    &:hover,
+    &:focus {
+        transform: translateY(-3px);
+    }
     &:last-of-type {
       margin-bottom: 20px;
     }
     a {
-      padding: 10px;
-      color: var(--lightest-orange);
-      text-decoration: none;
-      font-size: var(--fz-xxs);
-      font-family: var(--font-mono);
-      &:hover,
-        &:focus {
-        transform: translateY(-3px);
+        padding: 10px;
+        color: var(--lightest-orange);
+        text-decoration: none;
+        font-size: var(--fz-xxs);
+        font-family: var(--font-mono);
+        svg {
+            width: 20px;
+            height: 20px;
         }
-      svg {
-        width: 20px;
-        height: 20px;
-      }
     }
   }
 `;

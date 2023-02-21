@@ -1,10 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navLinks } from '@config';
-import { loaderDelay } from '@utils';
 import Menu from './menu';
 import Icon from '@components/icons/icon.svg';
 import ResumePDF from '/src/resume.pdf'
@@ -86,18 +83,23 @@ const StyledLinks = styled.div`
       position: relative;
       counter-increment: item 1;
       font-size: var(--fz-sm);
-      a {
-        padding: 10px;
-        text-decoration: none;
-        color: var(--lightest-orange);
-        &:before {
-          content: '0' counter(item) '.';
-          margin-right: 5px;
-          color: var(--green);
-          font-size: var(--fz-xs);
-          text-align: right;
+      transition: var(--transition);
+        a {
+            
+            padding: 10px;
+            text-decoration: none;
+            color: var(--lightest-orange);
+            &:before {
+            content: '0' counter(item) '.';
+            margin-right: 5px;
+            color: var(--green);
+            font-size: var(--fz-xs);
+            text-align: right;
+            }
         }
-      }
+        &:hover {
+            transform: translateY(-3px);
+        }
     }
   }
   .resume-button {
@@ -114,66 +116,38 @@ const StyledLinks = styled.div`
     cursor: pointer;
     margin-left: 15px;
     font-size: var(--fz-xs);
+    &:hover {
+        background-color: var(--trans-green);
+    }
   }
 `;
 
-const Nav = ({ isHome }) => {
-
-  const timeout = isHome ? loaderDelay : 0;
-  const fadeClass = isHome ? 'fade' : '';
-  const fadeDownClass = isHome ? 'fadedown' : '';
-
-  const Logo = (
-    <div className="logo" tabIndex="-1">
-      <Icon />
-    </div>
-  );
-
-  const ResumeLink = (
-    <a className="resume-button" download href={ResumePDF} target="_blank" rel="noopener noreferrer">
-      Resume
-    </a>
-  );
+const Nav = () => {
 
   return (
     <StyledHeader>
-      <StyledNav>
-        <TransitionGroup component={null}>
-          <CSSTransition classNames={fadeClass} timeout={timeout}>
-            {Logo}
-          </CSSTransition>
-        </TransitionGroup>
-
-        <StyledLinks>
-          <ol>
-            <TransitionGroup component={null}>
-              {
-                navLinks.map(({ url, name }, i) => (
-                  <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
-                    <li key={i} style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
-                      <Link to={url}>{name}</Link>
+        <StyledNav>
+            <div className="logo" tabIndex="-1">
+                <Icon />
+            </div>
+            <StyledLinks>
+            <ol>
+                {navLinks.map(({ url, name }, i) => (
+                    <li key={i}>
+                        <Link to={url}>{name}</Link>
                     </li>
-                  </CSSTransition>
                 ))}
-            </TransitionGroup>
-          </ol>
-
-          <TransitionGroup component={null}>
-            <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-              <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
-                {ResumeLink}
-              </div>
-            </CSSTransition>
-          </TransitionGroup>
-        </StyledLinks>
-        <Menu />
-      </StyledNav>
+            </ol>
+            <div>
+                <a className="resume-button" download href={ResumePDF} target="_blank" rel="noopener noreferrer">
+                    Resume
+                </a>
+            </div>
+            </StyledLinks>
+            <Menu />
+        </StyledNav>
     </StyledHeader>
   );
-};
-
-Nav.propTypes = {
-  isHome: PropTypes.bool,
 };
 
 export default Nav;
