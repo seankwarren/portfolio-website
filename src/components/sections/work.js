@@ -113,7 +113,7 @@ const Work = (props) => {
         },
         {
             title: 'Undergraduate Researcher',
-            company: 'UIC - Argonne',
+            company: 'BGSU - Argonne',
             dates: 'December 2016 - July 2017' ,
             description: '\tDuring my research experience at Bowling Green State University, in collaboration with Argonne National Lab, I explored the catalytic properties of doped graphene quantum dots in Oxygen Evolution and Reduction reactions. Through DFT simulations and material synthesis and characterization using cyclic voltammetry, I contributed to significant strides in characterizing these materials, which were being analyzed as models for graphene nanoribbons.\n\n\tAs part of this research, I tackled two main areas of focus. Firstly, I identified potential ways to reduce the high-performance computing (HPC) access costs for simulations, leading to faster and more cost-effective analyses of the data. Secondly, I leveraged extensive literature reviews and sythesis attempts to improve the reaction yields and overall quality of the synthesized materials, thus helping to pave the way for further more accurate measurements.',
         },

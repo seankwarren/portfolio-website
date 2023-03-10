@@ -8,6 +8,7 @@ const StyledMainContainer = styled.main`
 
 const IndexPage = () => (
   <StyledMainContainer>
+    <title>Sean Warren - Automation Engineer</title> 
   <Layout>
     <Hero />
     <About />
