@@ -100,7 +100,7 @@ const About = () => {
 
         <ul>
             <li>
-                Javascript (ES6+)
+                Typescript
             </li>
             <li>
                 React
@@ -109,13 +109,13 @@ const About = () => {
                 Node.js
             </li>
             <li>
-                Typescript
-            </li>
-            <li>
                 Django
             </li>
             <li>
-                Postgres
+                Gatsby
+            </li>
+            <li>
+                Pytorch
             </li>
         </ul>
       </>
