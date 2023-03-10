@@ -109,7 +109,7 @@ const Work = (props) => {
             title: 'Undergraduate Researcher',
             company: 'MGSU',
             dates: 'August 2015 - May 2016' ,
-            description: '\tWhile finishing my Junior and Senior year of high school, I also completed my A.S in Natural Sciences with a focus on Chemistry at Middle Georgia State University. While there I worked on research into photoactive azo-crown ether derivates for the selective capture of alkaline and alkali-earth metal ligands. The goal was to investigate materials for use in lead removal from potable water systems.',
+            description: '\tI worked on research into photoactive azo-crown ether derivates for the selective capture of alkaline and alkali-earth metal ligands. The goal was to investigate materials for use in lead removal from potable water systems.',
         },
         {
             title: 'Undergraduate Researcher',
