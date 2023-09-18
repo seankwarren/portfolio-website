@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import headshot from '/src/images/headshot.png'
+import headshot from '/src/images/headshot.jpg'
 
 const StyledAboutSection = styled.section`
     display: flex;
