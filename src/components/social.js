@@ -12,14 +12,14 @@ const StyledSocialList = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  &:after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 90px;
-    margin: 0 auto;
-    background-color: var(--lightest-orange);
-  }
+  // &:after {
+  //   content: '';
+  //   display: block;
+  //   width: 1px;
+  //   height: 90px;
+  //   margin: 0 auto;
+  //   background-color: var(--accent-main);
+  // }
   li {
     transition: var(--transition);
     &:hover,
@@ -30,15 +30,20 @@ const StyledSocialList = styled.ul`
       margin-bottom: 20px;
     }
     a {
-        padding: 10px;
-        color: var(--lightest-orange);
-        text-decoration: none;
-        font-size: var(--fz-xxs);
-        font-family: var(--font-mono);
-        svg {
-            width: 20px;
-            height: 20px;
-        }
+      padding: 10px;
+      color: var(--accent-main);
+      text-decoration: none;
+      font-size: var(--fz-xxs);
+      font-family: var(--font-mono);
+      
+      // svg {
+      //   width: 20px;
+      //   height: 20px;
+      // }
+    }
+    &:hover,
+    &:focus {
+      transform: translateX(3px);
     }
   }
 `;

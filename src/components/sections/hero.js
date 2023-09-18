@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState }/* , { useState, useEffect }  */ from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
+
 
 const StyledHeroSection = styled.section`
     display: flex;
@@ -12,8 +13,7 @@ const StyledHeroSection = styled.section`
     padding-top: 0;
     padding-left: 20px;
     padding-right: 20px;
-
-    @media (max-width: 640px) and (min-height: 200vh) {
+    @media (max-width: 640px) and (min-height: 700px) {
         padding-bottom: 10vh;
     }
     h1 {
@@ -28,32 +28,37 @@ const StyledHeroSection = styled.section`
     }
     h2 {
         font-weight: 600;
-        color: var(--lightest-orange);
+        color: var(--accent-main);
     }
     h3 {
         margin-top: 10px;
         font-weight: 500;
         font-size: clamp(var(--fz-xxl), 5vw, var(--fz-heading));
-        color: var(--lightest-red);
+        color: var(--accent-flair);
         line-height: 0.9;
     }
     p {
+        font-size: var(--fz-xxl);
         margin: 20px 0 0;
         max-width: 640px;
-        color: var(--lightest-orange)
+        color: var(--body)
     }
 `;
 
 const Hero = () => {
-  const h1 = <h1>Hi, my name is</h1>;
-  const h2 = <h2 className="big-heading">Sean Warren.</h2>;
-  const h3 = <h3 className="big-heading">I build things from code and wood.</h3>;
-  const h4 = (
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => setIsMounted(true),[]);
+
+  const one = <h1>Hi, my name is</h1>;
+  const two = <h2 className="big-heading">Sean Warren.</h2>;
+  const three = <h3 className="big-heading">I build things from code and wood.</h3>;
+  const four = (
     <>
       <p>
-        I’m a chemical and software engineer specializing in scientific computing: building tools for data interaction and automation. 
-        Recently, I’m focused on exploring modeling, simulation, data visualization and machine learning in full-stack web applications.
-        I am currently open to new opportunities.
+        I’m a software engineer specializing in web development for scientific computing and data visualization tools, enabling scientists and engineers to understand and utilize data more effectively.
+      </p>
+      <p>
+        I'm a woodworker specializing in minimalist, hardwood furniture for a more pragmatic and sustainable home, embracing a build-it-for-life lifestyle.
       </p>
     </>
   );
@@ -63,9 +68,14 @@ const Hero = () => {
   return (
     <StyledHeroSection>
         <>
-          {items.map((item, i) => (
-            <div key={i}>{item}</div>
-          ))}
+        <TransitionGroup>
+          {isMounted && (
+            items.map((item, i) => (
+              <CSSTransition classNames="fade" key={i} timeout={1000}>
+                <div key={i} style={{transitionDelay: "200ms"}}>{item}</div>
+              </CSSTransition>
+          )))}
+        </TransitionGroup>
         </>
     </StyledHeroSection>
   );

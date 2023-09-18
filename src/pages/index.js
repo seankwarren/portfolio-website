@@ -1,15 +1,14 @@
 import * as React from "react"
-import styled from 'styled-components';
-import { Layout, Hero, About, Work, Code, Wood, Contact } from "./../components"
+import PropTypes from 'prop-types';
+// import styled from 'styled-components';
+import { Layout, Hero, About } from "./../components"
 
-const StyledMainContainer = styled.main`
-  background-color: var(--forest-green);
-`;
-
-const IndexPage = () => (
-  <StyledMainContainer>
-    <title>Sean Warren - Automation Engineer</title> 
-  <Layout>
+// const StyledMainContainer = styled.main`
+//   counter-reset: section;
+// `;
+const IndexPage = ({ location }) => (
+  <>
+  <Layout location={location}>
     <Hero />
     <About />
     <Work />

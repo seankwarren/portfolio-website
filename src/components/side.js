@@ -11,36 +11,29 @@ const StyledSideElement = styled.div`
   left: ${props => (props.orientation === 'left' ? '40px' : 'auto')};
   right: ${props => (props.orientation === 'left' ? 'auto' : '40px')};
   z-index: 10;
-  color: var(--light-slate);
-  transition: var(--transition);
+  color: var(--body);
   @media (max-width: 1080px) {
     left: ${props => (props.orientation === 'left' ? '30px' : 'auto')};
     right: ${props => (props.orientation === 'left' ? 'auto' : '30px')};
   }
-  @media (max-width: 770px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
 
 const Side = ({ children, isHome, orientation }) => {
-  const [isMounted, setIsMounted] = useState(!isHome);
+  const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    if (!isHome) {
-      return;
-    }
-    const timeout = setTimeout(() => setIsMounted(true), loaderDelay);
-    return () => clearTimeout(timeout);
-  }, []);
+  useEffect(() => {setIsMounted(true)}, []);
 
   return (
     <StyledSideElement orientation={orientation}>
         <TransitionGroup component={null}>
-          {isMounted && (
-            <CSSTransition classNames={isHome ? 'fade' : ''} timeout={isHome ? loaderDelay : 0}>
+            {isMounted && (
+            <CSSTransition classNames={'fade'} timeout={ loaderDelay } style={{transitionDelay: "100ms"}}>
               {children}
             </CSSTransition>
-          )}
+            )}
         </TransitionGroup>
     </StyledSideElement>
   );
