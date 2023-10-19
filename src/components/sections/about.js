@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import React from 'react';
 import styled from 'styled-components';
-import headshot from '/src/images/headshot.jpg'
 
 const StyledAboutSection = styled.section`
     display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
     flex-direction: column;
     align-items: flex-start;
-    min-height: 100vh;
+    min-height: 1000pt;
     padding: calc(var(--nav-height) + 30px) 20px 0;
 
     h1 {
@@ -63,26 +61,18 @@ const StyledAboutSection = styled.section`
         }
     }
     .headshot-container {
-        margin-top: 20px;
+        margin-top: 40px;
         align-self: center;
         background-color: var(--green);
         border-radius: 10px;
-    }
-    img {
-        transform: translate(-5px, -5px);
-        border-radius: 10px;
-        vertical-align: top;
-        z-index: 1;
-        width: 200px;
-        height: 250px;
-        height: auto;
-        mix-blend-mode: hard-light;
-        /* transform: scaleX(-1); */
-        :hover {
-            mix-blend-mode: normal;
+        img {
+            translate: -5px -5px;
+            border-radius: 10px;
+            vertical-align: top;
+            height: 300px;
+            width: auto;
         }
     }
-    .img-filter {}
 `
 
 const About = () => {
@@ -141,7 +131,7 @@ const About = () => {
         ))}
         <div className='headshot-container'>
             <div></div>
-            <img alt="Headshot" src={headshot}/>
+            <Image alt="Headshot" height={300} width={300} src="/images/headshot.jpg"/>
         </div>
       </StyledAboutSection>
     );

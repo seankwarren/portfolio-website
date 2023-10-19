@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import Image from 'next/image';
 import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import IconLoader from '@components/icons/icon-loader.svg';
 
 const StyledLoader = styled.div`
   display: flex;
@@ -35,9 +34,8 @@ const Loader = ({ finishLoading }) => {
 
   return (
     <StyledLoader className="loader" isMounted={isMounted}>
-      <Helmet bodyAttributes={{ class: `hidden` }} />
         <div className="logo-wrapper" >
-          <IconLoader onClick={() => finishLoading()}/>
+          <Image src="/icons/icon-loader.svg" width={200} height={200} onClick={() => finishLoading()}/>
         </div>
     </StyledLoader>
   );

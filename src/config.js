@@ -14,10 +14,10 @@ module.exports = {
             name: 'Code',
             url: '/#code'
         },
-        {
-            name: 'Wood',
-            url: '/#wood'
-        },
+        // {
+        //     name: 'Wood',
+        //     url: '/#wood'
+        // },
         {
             name: 'Contact',
             url: '/#contact'

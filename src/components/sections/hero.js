@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledHeroSection = styled.section`
@@ -8,7 +7,7 @@ const StyledHeroSection = styled.section`
     align-items: center;
     flex-direction: column;
     align-items: flex-start;
-    min-height: 100vh;
+    min-height: 500pt;
     padding-top: 0;
     padding-left: 20px;
     padding-right: 20px;

@@ -6,7 +6,7 @@ const StyledWorkSection = styled.section`
     /* margin: 0px auto; */
     padding: calc(var(--nav-height) + 30px) 20px 100px;
     max-width: 640px;
-    min-height: 100vh;
+    min-height: 400pt;
 
     .inner {
         display: flex;
@@ -109,11 +109,11 @@ const Work = (props) => {
             title: 'Undergraduate Researcher',
             company: 'MGSU',
             dates: 'August 2015 - May 2016' ,
-            description: '\tWhile finishing my Junior and Senior year of high school, I also completed my A.S in Natural Sciences with a focus on Chemistry at Middle Georgia State University. While there I worked on research into photoactive azo-crown ether derivates for the selective capture of alkaline and alkali-earth metal ligands. The goal was to investigate materials for use in lead removal from potable water systems.',
+            description: '\tI worked on research into photoactive azo-crown ether derivates for the selective capture of alkaline and alkali-earth metal ligands. The goal was to investigate materials for use in lead removal from potable water systems.',
         },
         {
             title: 'Undergraduate Researcher',
-            company: 'UIC - Argonne',
+            company: 'BGSU - Argonne',
             dates: 'December 2016 - July 2017' ,
             description: '\tDuring my research experience at Bowling Green State University, in collaboration with Argonne National Lab, I explored the catalytic properties of doped graphene quantum dots in Oxygen Evolution and Reduction reactions. Through DFT simulations and material synthesis and characterization using cyclic voltammetry, I contributed to significant strides in characterizing these materials, which were being analyzed as models for graphene nanoribbons.\n\n\tAs part of this research, I tackled two main areas of focus. Firstly, I identified potential ways to reduce the high-performance computing (HPC) access costs for simulations, leading to faster and more cost-effective analyses of the data. Secondly, I leveraged extensive literature reviews and sythesis attempts to improve the reaction yields and overall quality of the synthesized materials, thus helping to pave the way for further more accurate measurements.',
         },
@@ -129,9 +129,15 @@ const Work = (props) => {
             dates: 'July 2020 - April 2022' ,
             description: '\tDuring my time at OMP, I played an integral role in improving the efficiency and reliability of supply chain planning for top chemical companies such as Dow, Eastman, and BASF. I led the development of a production grouping framework, starting from foundations by creating the necessary database infrastructure and converting SAP data. Additionally, I designed intuitive dashboards that enabled end-users to perform data maintenance and access visualizations and analytics with ease. \n\n\tTo ensure the success of this project, I worked closely with clients in the industry to understand their specific needs and translate them into technical specifications and plans. My focus throughout the development process was to create a user-friendly experience that streamlined functionality and minimized user interaction.'
         },
+        {
+            title: 'Software Engineer',
+            company: 'Mat3ra',
+            dates: 'May 2023 - Present' ,
+            description: '\tAt Mat3ra, I am working on the development of a fully featured cloud platform for the design and simulation of materials. My focus is on the development of a robust system design and infrastructure that enables future scalability and attracts talented engineers. Additionally, I am working to recreate the UI/UX from the ground up that enables novice and expert users alike to easily configure calculations and visualize results.'
+        }
     ];
 
-    const [selectedJob, setSelectedJob] = useState(workList[3]);
+    const [selectedJob, setSelectedJob] = useState(workList[workList.length-1]);
     
     const handleClick = (e) => {
 

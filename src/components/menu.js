@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Helmet } from 'react-helmet';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
 import { navLinks } from '@config';
 import { useOnClickOutside } from '@hooks';
-import ResumePDF from "/src/resume.pdf";
+import Link from 'next/link';
+import React, { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 
 const StyledMenu = styled.div`
   display: none;
@@ -210,10 +208,6 @@ const Menu = () => {
 
   return (
     <StyledMenu>
-      <Helmet>
-        <body />
-      </Helmet>
-
       <div ref={wrapperRef}>
         <StyledHamburgerButton
           onClick={toggleMenu}
@@ -231,7 +225,7 @@ const Menu = () => {
               <ol>
                 {navLinks.map(({ url, name }, i) => (
                   <li key={i}>
-                    <Link to={url} onClick={() => setMenuOpen(false)}>
+                    <Link href={url} onClick={() => setMenuOpen(false)}>
                       {name}
                     </Link>
                   </li>
@@ -239,9 +233,9 @@ const Menu = () => {
               </ol>
             )}
 
-            <a href={ResumePDF} download target="_blank" className="resume-link">
+            {/* <a href={"/resume.pdf"} target="_blank" className="resume-link">
               Resume
-            </a>
+            </a> */}
           </nav>
         </StyledSidebar>
       </div>

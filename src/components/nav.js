@@ -1,13 +1,11 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import styled from 'styled-components';
 import { navLinks } from '@config';
 import { loaderDelay } from '@utils';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import styled from 'styled-components';
 import Menu from './menu';
-import Icon from '@components/icons/icon.svg';
-import ResumePDF from '/src/resume.pdf'
 
 const StyledHeader = styled.header`
     display: flex;
@@ -29,7 +27,7 @@ const StyledHeader = styled.header`
     @media (max-width: 1080px) {
         padding: 0 40px;
     }
-    @media (max-width: 770px) 
+    @media (max-width: 770px)  {
         padding: 0 25px;
     }
 `;
@@ -119,61 +117,56 @@ const StyledLinks = styled.div`
 
 const Nav = ({ isHome }) => {
 
-  const timeout = isHome ? loaderDelay : 0;
-  const fadeClass = isHome ? 'fade' : '';
-  const fadeDownClass = isHome ? 'fadedown' : '';
+    const timeout = isHome ? loaderDelay : 0;
+    const fadeClass = isHome ? 'fade' : '';
+    const fadeDownClass = isHome ? 'fadedown' : '';
 
-  const Logo = (
-    <div className="logo" tabIndex="-1">
-      <Icon />
-    </div>
-  );
+    const Logo = (
+        <div className="logo" tabIndex="-1">
+        <Image width={50} height={50} src="/icons/icon.svg"/>
+        </div>
+    );
 
-  const ResumeLink = (
-    <a className="resume-button" download href={ResumePDF} target="_blank" rel="noopener noreferrer">
-      Resume
-    </a>
-  );
+    /* const ResumeLink = (
+        <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+        Resume
+        </a>
+    ); */
 
-  return (
-    <StyledHeader>
-      <StyledNav>
-        <TransitionGroup component={null}>
-          <CSSTransition classNames={fadeClass} timeout={timeout}>
-            {Logo}
-          </CSSTransition>
-        </TransitionGroup>
-
-        <StyledLinks>
-          <ol>
+    return (
+        <StyledHeader>
+        <StyledNav>
             <TransitionGroup component={null}>
-              {
-                navLinks.map(({ url, name }, i) => (
-                  <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
-                    <li key={i} style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
-                      <Link to={url}>{name}</Link>
-                    </li>
-                  </CSSTransition>
-                ))}
-            </TransitionGroup>
-          </ol>
-
-          <TransitionGroup component={null}>
-            <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-              <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
-                {ResumeLink}
-              </div>
+            <CSSTransition classNames={fadeClass} timeout={timeout}>
+                {Logo}
             </CSSTransition>
-          </TransitionGroup>
-        </StyledLinks>
-        <Menu />
-      </StyledNav>
-    </StyledHeader>
-  );
-};
+            </TransitionGroup>
 
-Nav.propTypes = {
-  isHome: PropTypes.bool,
+            <StyledLinks>
+            <ol>
+                <TransitionGroup component={null}>
+                {
+                    navLinks.map(({ url, name }, i) => (
+                    <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
+                        <li key={i} style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
+                        <Link href={url}>{name}</Link>
+                        </li>
+                    </CSSTransition>
+                    ))}
+                </TransitionGroup>
+            </ol>
+
+            <TransitionGroup component={null}>
+                <CSSTransition classNames={fadeDownClass} timeout={timeout}>
+                <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
+                </div>
+                </CSSTransition>
+            </TransitionGroup>
+            </StyledLinks>
+            <Menu />
+        </StyledNav>
+        </StyledHeader>
+    );
 };
 
 export default Nav;

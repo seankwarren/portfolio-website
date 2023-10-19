@@ -1,7 +1,6 @@
-import * as React from "react"
-import PropTypes from 'prop-types';
+import * as React from "react";
 import styled from 'styled-components';
-import { Layout, Hero, About, Work, Code, Wood } from "./../components"
+import { About, Code, Contact, Hero, Layout, Work } from "./../components";
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -15,7 +14,8 @@ const IndexPage = () => (
     <About />
     <Work />
     <Code />
-    <Wood />
+    {/* <Wood /> */}
+    <Contact />
   </Layout>
   </>
 )
