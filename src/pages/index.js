@@ -1,4 +1,5 @@
-import * as React from "react";
+import { Analytics } from '@vercel/analytics/react';
+import React from "react";
 import styled from 'styled-components';
 import { About, Code, Contact, Hero, Layout, Work } from "./../components";
 
@@ -9,6 +10,7 @@ const StyledMainContainer = styled.main`
 
 const IndexPage = () => (
   <>
+  <Analytics />
   <Layout>
     <Hero />
     <About />
